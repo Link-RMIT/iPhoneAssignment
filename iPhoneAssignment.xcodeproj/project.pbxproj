@@ -14,6 +14,7 @@
 		9E6A4EEB1C9FD09600E94F2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE91C9FD09600E94F2F /* LaunchScreen.storyboard */; };
 		9E6A4EF61C9FD09600E94F2F /* iPhoneAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EF51C9FD09600E94F2F /* iPhoneAssignmentTests.swift */; };
 		9E6A4F011C9FD09600E94F2F /* iPhoneAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4F001C9FD09600E94F2F /* iPhoneAssignmentUITests.swift */; };
+		9E6A4F101C9FD3AF00E94F2F /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4F0F1C9FD3AF00E94F2F /* MovieModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9E6A4EFC1C9FD09600E94F2F /* iPhoneAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPhoneAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6A4F001C9FD09600E94F2F /* iPhoneAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneAssignmentUITests.swift; sourceTree = "<group>"; };
 		9E6A4F021C9FD09600E94F2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E6A4F0F1C9FD3AF00E94F2F /* MovieModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		9E6A4EDF1C9FD09600E94F2F /* iPhoneAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				9E6A4F0E1C9FD38000E94F2F /* Model */,
 				9E6A4EE01C9FD09600E94F2F /* AppDelegate.swift */,
 				9E6A4EE21C9FD09600E94F2F /* ViewController.swift */,
 				9E6A4EE41C9FD09600E94F2F /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				9E6A4F021C9FD09600E94F2F /* Info.plist */,
 			);
 			path = iPhoneAssignmentUITests;
+			sourceTree = "<group>";
+		};
+		9E6A4F0E1C9FD38000E94F2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E6A4F0F1C9FD3AF00E94F2F /* MovieModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E6A4F101C9FD3AF00E94F2F /* MovieModel.swift in Sources */,
 				9E6A4EE31C9FD09600E94F2F /* ViewController.swift in Sources */,
 				9E6A4EE11C9FD09600E94F2F /* AppDelegate.swift in Sources */,
 			);
