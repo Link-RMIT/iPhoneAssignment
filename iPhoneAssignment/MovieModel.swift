@@ -28,7 +28,7 @@ class Movie
         self.plot=plot
     }
     
-}
+}//rwaASDA
 
 /*
 private static List<Movie> favorites = new ArrayList<Movie>(Arrays.asList(
