@@ -1,5 +1,5 @@
 //
-//  SessionListController.swift
+//  BookingHistroyController.swift
 //  iPhoneAssignment
 //
 //  Created by Cookie on 16/3/25.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class SessionListController: UITableViewController {
-    var mvId:String?
-    var sessionList:[Session]?
+class BookingHistroyController: UITableViewController {
+    let bookingHistroy=BookingModel.bookingList
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,9 +18,8 @@ class SessionListController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        sessionList=SessionModel.getSessionByMovie(mvId!)
-        print(sessionList!.count)
-        
+        print("asdf")
+        print(bookingHistroy.count)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,29 +28,31 @@ class SessionListController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    /*
+/*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
-    */
+*/
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return sessionList!.count
+        print(bookingHistroy.count)
+        return bookingHistroy.count
     }
 
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("sessionItem", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("bookingItem", forIndexPath: indexPath)
 
         // Configure the cell...
-        let session = sessionList![indexPath.row]
-        cell.textLabel!.text=session.date
-        cell.detailTextLabel!.text=session.sit.description
-        print(session.date)
+        let booking = bookingHistroy[indexPath.row]
+        let session = SessionModel.getSessionById(booking.sessionId)
+        let movie = MovieModel.getMovieById(session.mvId)
+        cell.textLabel!.text=movie?.title
+        cell.detailTextLabel!.text=session.date
         return cell
     }
-    
+
 
     /*
     // Override to support conditional editing of the table view.

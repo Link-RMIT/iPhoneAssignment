@@ -99,7 +99,7 @@ class Session
 }
 
 class SessionModel{
-    static var session:[Session]=SessionModel.ini(100)
+    static var sessionList:[Session]=SessionModel.ini(100)
     static func ini(n:Int)->[Session]{
         var l:[Session]=[]
         var nn=n
@@ -111,7 +111,14 @@ class SessionModel{
     }
     static func getSessionByMovie(mvId:String)->[Session]
     {
-        return SessionModel.session.filter({(s:Session)->Bool in return s.mvId==mvId})
+        return SessionModel.sessionList.filter({(s:Session)->Bool in return s.mvId==mvId})
+    }
+    static func getMovieBySession(sessionId:String)->Movie{
+        let s=SessionModel.getSessionById(sessionId)
+        return MovieModel.getMovieById(s.mvId)!
+    }
+    static func getSessionById(sessionId:String)->Session{
+        return sessionList.filter({(s:Session)->Bool in return s.id==sessionId}).first!
     }
     
 }
@@ -126,5 +133,21 @@ class Booking
         self.id=id;
         self.sessionId=sessionId
         self.credictCardNumber=credictCardNumber
+    }
+    
+}
+
+class BookingModel
+{
+    static var bookingList:[Booking]=BookingModel.ini(10)
+    static func ini(n:Int)->[Booking]{
+        var l:[Booking]=[]
+        var nn=n
+        while(nn>0){
+            let sid=SessionModel.sessionList[Int(arc4random_uniform(UInt32(SessionModel.sessionList.count)))].id
+            l.append(Booking(id: nn.description,sessionId: sid,credictCardNumber: "2093485723450"))
+            nn=nn-1
+        }
+        return l
     }
 }

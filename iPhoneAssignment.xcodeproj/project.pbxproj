@@ -10,9 +10,10 @@
 		761B241E1CA4E8B0005CE426 /* MovieListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B241D1CA4E8B0005CE426 /* MovieListController.swift */; };
 		761B24221CA4F9CA005CE426 /* MovieDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B24211CA4F9CA005CE426 /* MovieDetailController.swift */; };
 		761B24241CA53DF1005CE426 /* SessionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B24231CA53DF1005CE426 /* SessionListController.swift */; };
+		761B24261CA54FB7005CE426 /* BookingHistroyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B24251CA54FB7005CE426 /* BookingHistroyController.swift */; };
+		761B24281CA554D3005CE426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761B24271CA554D3005CE426 /* Main.storyboard */; };
 		9E6A4EE11C9FD09600E94F2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE01C9FD09600E94F2F /* AppDelegate.swift */; };
 		9E6A4EE31C9FD09600E94F2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE21C9FD09600E94F2F /* ViewController.swift */; };
-		9E6A4EE61C9FD09600E94F2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE41C9FD09600E94F2F /* Main.storyboard */; };
 		9E6A4EE81C9FD09600E94F2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE71C9FD09600E94F2F /* Assets.xcassets */; };
 		9E6A4EEB1C9FD09600E94F2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE91C9FD09600E94F2F /* LaunchScreen.storyboard */; };
 		9E6A4EF61C9FD09600E94F2F /* iPhoneAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EF51C9FD09600E94F2F /* iPhoneAssignmentTests.swift */; };
@@ -41,10 +42,11 @@
 		761B241D1CA4E8B0005CE426 /* MovieListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListController.swift; sourceTree = "<group>"; };
 		761B24211CA4F9CA005CE426 /* MovieDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailController.swift; sourceTree = "<group>"; };
 		761B24231CA53DF1005CE426 /* SessionListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionListController.swift; sourceTree = "<group>"; };
+		761B24251CA54FB7005CE426 /* BookingHistroyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingHistroyController.swift; sourceTree = "<group>"; };
+		761B24271CA554D3005CE426 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9E6A4EDD1C9FD09600E94F2F /* iPhoneAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhoneAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6A4EE01C9FD09600E94F2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E6A4EE21C9FD09600E94F2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9E6A4EE51C9FD09600E94F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E6A4EE71C9FD09600E94F2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E6A4EEA1C9FD09600E94F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E6A4EEC1C9FD09600E94F2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				761B241D1CA4E8B0005CE426 /* MovieListController.swift */,
 				761B24211CA4F9CA005CE426 /* MovieDetailController.swift */,
 				761B24231CA53DF1005CE426 /* SessionListController.swift */,
+				761B24251CA54FB7005CE426 /* BookingHistroyController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -118,8 +121,8 @@
 				761B24181CA4E787005CE426 /* Controller */,
 				9E6A4F0E1C9FD38000E94F2F /* Model */,
 				9E6A4EE01C9FD09600E94F2F /* AppDelegate.swift */,
+				761B24271CA554D3005CE426 /* Main.storyboard */,
 				9E6A4EE21C9FD09600E94F2F /* ViewController.swift */,
-				9E6A4EE41C9FD09600E94F2F /* Main.storyboard */,
 				9E6A4EE71C9FD09600E94F2F /* Assets.xcassets */,
 				9E6A4EE91C9FD09600E94F2F /* LaunchScreen.storyboard */,
 				9E6A4EEC1C9FD09600E94F2F /* Info.plist */,
@@ -257,9 +260,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				761B24281CA554D3005CE426 /* Main.storyboard in Resources */,
 				9E6A4EEB1C9FD09600E94F2F /* LaunchScreen.storyboard in Resources */,
 				9E6A4EE81C9FD09600E94F2F /* Assets.xcassets in Resources */,
-				9E6A4EE61C9FD09600E94F2F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				761B24241CA53DF1005CE426 /* SessionListController.swift in Sources */,
+				761B24261CA54FB7005CE426 /* BookingHistroyController.swift in Sources */,
 				761B241E1CA4E8B0005CE426 /* MovieListController.swift in Sources */,
 				9E6A4F101C9FD3AF00E94F2F /* MovieModel.swift in Sources */,
 				761B24221CA4F9CA005CE426 /* MovieDetailController.swift in Sources */,
@@ -325,14 +329,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9E6A4EE41C9FD09600E94F2F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9E6A4EE51C9FD09600E94F2F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9E6A4EE91C9FD09600E94F2F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
