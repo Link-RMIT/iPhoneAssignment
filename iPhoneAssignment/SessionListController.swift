@@ -1,5 +1,5 @@
 //
-//  MovieListController.swift
+//  SessionListController.swift
 //  iPhoneAssignment
 //
 //  Created by Cookie on 16/3/25.
@@ -8,11 +8,9 @@
 
 import UIKit
 
-
-class MovieListController: UITableViewController {
-
-    var movieList=MovieModel.movieList
-    
+class SessionListController: UITableViewController {
+    var mvId:String?
+    var sessionList:[Session]?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +19,9 @@ class MovieListController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-
+        sessionList=SessionModel.getSessionByMovie(mvId!)
+        print(sessionList!.count)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,26 +30,25 @@ class MovieListController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    /*
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
-    }*/
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return movieList.count
+        return sessionList!.count
     }
 
-    
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("movieItem", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("sessionItem", forIndexPath: indexPath)
 
         // Configure the cell...
-        let movie = movieList[indexPath.row]
-        cell.textLabel!.text=movie.title
-        cell.imageView!.image=UIImage(named:movie.poster)
-        cell.detailTextLabel!.text=movie.year
+        let session = sessionList![indexPath.row]
+        cell.textLabel!.text=session.date
+        cell.detailTextLabel!.text=session.sit.description
         return cell
     }
     
@@ -89,17 +88,14 @@ class MovieListController: UITableViewController {
     }
     */
 
-
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let movieDetailViewController = segue.destinationViewController as! MovieDetailController
-        let indexPath = self.tableView.indexPathForSelectedRow!
-        movieDetailViewController.mvId=movieList[indexPath.row].id
     }
-    
+    */
 
 }

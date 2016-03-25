@@ -63,23 +63,68 @@ class MovieModel
         Movie(id: "tt0249462", title: "Billy Elliot", year: "2000", plot: "A talented young boy becomes torn between his unexpected love of dance and the disintegration of his family."),
         Movie(id: "tt0457939", title: "The Holiday",  year: "2006", plot: "Two women troubled with guy-problems swap homes in each other's countries, where they each meet a local guy and fall in love.")
     ]
-    /*static func getMovieById(id:String)->Movie{
-        //MovieModel.movieList.
-    }*/
+    static func getMovieById(id:String)->Movie?{
+        return MovieModel.movieList.filter({(m:Movie)->Bool in return m.id==id}).first
+    }
     
 }
 
 class Session
 {
     var id:String
-    var mvid:String
+    var mvId:String
     var date:String
     var price:Float
-    init(id:String,mvid:String,date:String,price:Float)
+    var sit:Int
+    static var cid=0
+    init(id:String,mvid:String,date:String,price:Float,sit:Int)
     {
         self.id=id
-        self.mvid=mvid
+        self.mvId=mvid
         self.date=date
-        self.price=price;
+        self.price=price
+        self.sit=sit
+    }
+    
+    init()
+    {
+        self.id=Session.cid.description
+        Session.cid=Session.cid+1
+        date="DD/MM/YYYY"
+        price=10.0
+        sit = Int(arc4random_uniform(UInt32(MovieModel.movieList.count)))
+        mvId = MovieModel.movieList[Int(arc4random_uniform(UInt32(MovieModel.movieList.count)))].id
+    }
+    
+}
+
+class SessionModel{
+    static var session:[Session]=SessionModel.ini(100)
+    static func ini(n:Int)->[Session]{
+        var l:[Session]=[]
+        var nn=n
+        while(nn>0){
+            l.append(Session())
+            nn=nn-1
+        }
+        return l
+    }
+    static func getSessionByMovie(mvId:String)->[Session]
+    {
+        return SessionModel.session.filter({(s:Session)->Bool in return s.mvId==mvId})
+    }
+    
+}
+
+class Booking
+{
+    var id:String
+    var sessionId:String
+    var credictCardNumber:String
+    init(id:String,sessionId:String,credictCardNumber:String)
+    {
+        self.id=id;
+        self.sessionId=sessionId
+        self.credictCardNumber=credictCardNumber
     }
 }
