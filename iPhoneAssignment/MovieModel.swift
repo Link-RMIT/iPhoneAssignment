@@ -66,6 +66,7 @@ class MovieModel
     /*static func getMovieById(id:String)->Movie{
         //MovieModel.movieList.
     }*/
+    
 }
 
 class Session
