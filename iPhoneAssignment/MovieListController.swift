@@ -12,7 +12,7 @@ import UIKit
 class MovieListController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
 
     var movieList=MovieModel.movieList
-    
+    var filteredMovie=[Movie]()
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -42,8 +42,11 @@ class MovieListController: UIViewController, UITableViewDataSource, UITableViewD
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print("asdfasdfasdfasdf")
-        return movieList.count
+        if( tableView == self.searchDisplayController?.searchResultsTableView){
+            return self.filteredMovie.count
+        }else{
+            return self.movieList.count
+        }
     }
 /*
     func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject)->Bool{
@@ -58,10 +61,18 @@ class MovieListController: UIViewController, UITableViewDataSource, UITableViewD
     }*/
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("movieItem", forIndexPath: indexPath)
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("movieItem", forIndexPath: indexPath)
 
         // Configure the cell...
-        let movie = movieList[indexPath.row]
+        var movie : Movie
+        if( tableView == self.searchDisplayController?.searchResultsTableView){
+            movie = self.filteredMovie[indexPath.row]
+        }else{
+            movie = self.movieList[indexPath.row]
+        }
+
+        
+        //movie = movieList[indexPath.row]
         cell.textLabel!.text=movie.title
         cell.imageView!.image=UIImage(named:movie.poster)
         cell.detailTextLabel!.text=movie.year
@@ -69,7 +80,17 @@ class MovieListController: UIViewController, UITableViewDataSource, UITableViewD
     }
     //*/
     func filterContentForSearchText(searchText: String, scope: String = "Title"){
-        print(searchText)
+        self.filteredMovie = self.movieList.filter({(m : Movie) -> Bool in
+            return scope == "Title" && m.title.rangeOfString(searchText) != nil
+        })
+    }
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
+        self.filterContentForSearchText(searchString!,scope:"Title")
+        return true
+    }
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text!,scope:"Title")
+        return true
     }
     /*
     // Override to support conditional editing of the table view.
