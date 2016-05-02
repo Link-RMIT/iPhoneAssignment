@@ -9,9 +9,12 @@
 import UIKit
 
 
-class MovieListController: UITableViewController {
+class MovieListController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
 
     var movieList=MovieModel.movieList
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,7 @@ class MovieListController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tableView.dataSource=self
 
     }
 
@@ -30,19 +34,30 @@ class MovieListController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    /*
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
-    }*/
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return movieList.count
+        return 1
     }
 
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        print("asdfasdfasdfasdf")
+        return movieList.count
+    }
+/*
+    func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject)->Bool{
+        let cell = tableView.dequeueReusableCellWithIdentifier("movieItem", forIndexPath: indexPath)
+        
+        // Configure the cell...
+        let movie = movieList[indexPath.row]
+        cell.textLabel!.text=movie.title
+        cell.imageView!.image=UIImage(named:movie.poster)
+        cell.detailTextLabel!.text=movie.year
+        return cell
+    }*/
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("movieItem", forIndexPath: indexPath)
 
         // Configure the cell...
@@ -52,8 +67,10 @@ class MovieListController: UITableViewController {
         cell.detailTextLabel!.text=movie.year
         return cell
     }
-    
-
+    //*/
+    func filterContentForSearchText(searchText: String, scope: String = "Title"){
+        print(searchText)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
