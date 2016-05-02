@@ -9,12 +9,12 @@
 import UIKit
 
 
-class MovieListController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
+class MovieListController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     var movieList=MovieModel.movieList
     var filteredMovie=[Movie]()
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,7 @@ class MovieListController: UIViewController, UITableViewDataSource, UITableViewD
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.tableView.dataSource=self
+        self.searchBar.delegate = self
 
     }
 
@@ -91,6 +92,16 @@ class MovieListController: UIViewController, UITableViewDataSource, UITableViewD
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text!,scope:"Title")
         return true
+    }
+    func searchBar(_ searchBar: UISearchBar,
+        textDidChange searchText: String){
+            print("asdf")
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar){
+        print("eenndd")
+    }
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        print(searchBar.text)
     }
     /*
     // Override to support conditional editing of the table view.
