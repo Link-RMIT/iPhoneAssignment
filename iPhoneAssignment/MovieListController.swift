@@ -103,6 +103,12 @@ class MovieListController: UIViewController, UITableViewDataSource, UITableViewD
         print("eenndd")
     }
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        Alamofire.request(.GET,"https://www.omdbapi.com/?y=&plot=full&r=json&s="+searchBar.text!).responseJSON{ (response)-> Void in
+            if(response.result.value != nil){
+                let r = JSON(response.result.value!)
+                print(r["Search"][0]["Title"])
+            }
+        }
         print(searchBar.text)
     }
     /*
