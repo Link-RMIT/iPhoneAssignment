@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
 
 class MovieListController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
