@@ -110,12 +110,16 @@ class MovieListController: ViewControllerWithIndicator, UITableViewDataSource, U
         let s=self
         s.startActivity()
         MovieModel.search(searchBar.text!, callback:{(movieList)-> Void in
+            guard
+            print("f1")
             s.movieList = movieList
-            print("ff")
+            
+            print("f2")
             print(movieList.count)
-            print("uu")
+            print("f3")
             self.tableView.reloadData()
             s.stopActivity()
+            else{return}
         })
         /*Alamofire.request(.GET,"https://www.omdbapi.com/?y=&plot=full&r=json&s="+searchBar.text!).responseJSON{ (response)-> Void in
             if(response.result.value != nil){

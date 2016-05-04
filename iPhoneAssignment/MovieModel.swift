@@ -128,12 +128,18 @@ class MovieModel
     static func search(keywords:String!,callback:([Movie])->Void){
         Alamofire.request(.GET,"https://www.omdbapi.com/?y=&plot=full&r=json&s="+keywords).responseJSON{ (response)-> Void in
             if(response.result.value != nil){
+                var count:Int=0
+                let r=JSON(response.result.value!)["Search"].arrayValue.map{
+                    (jmovie) -> Movie in
+                    print (count)
+                    count=count+1
+                    return Movie(movie:jmovie)
+                }
+                print("fuck")
                 callback(
-                    JSON(response.result.value!)["Search"].arrayValue.map{
-                        (jmovie) -> Movie in
-                        return Movie(movie:jmovie)
-                    }
+                    r
                 )
+                print("fuck22")
             }else{
                 callback([Movie]())
             }
