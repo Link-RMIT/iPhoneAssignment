@@ -8,21 +8,43 @@
 
 import UIKit
 
-class MovieDetailController: UIViewController {
+class MovieDetailController: ViewControllerWithIndicator {
     
     var mvId:String?
     @IBOutlet weak var movieTitle:UILabel!
     @IBOutlet weak var moviePlot:UILabel!
     @IBOutlet weak var moviePoster:UIImageView!
-    var movie:Movie?
+    var movie:MovieDetail?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let s=self
+        s.startActivity()
+        print(mvId)
+        MovieModel.getMovieDetailById(self.mvId, callback:{(movie)-> Void in
+            //s.movieTitle.text=movie?.title;
+            //s.moviePlot.text=movie?.plot
+            s.stopActivity()
+            print(movie?.poster)
+            /*if let url = NSURL(string: movie!.poster){
+                if let data = NSData(contentsOfURL: url){
+                    s.moviePoster.image = UIImage(data: data)
+                }
+            }*/
+
+        })
+        /*NSURLSession.sharedSession().dataTaskWithURL(NSURL(string:"https://ia.media-imdb.com/images/M/MV5BMTc1OTQzNzE0Nl5BMl5BanBnXkFtZTcwNDU4NDk3Mw@@._V1_SX300.jpg")!){
+            (data, response, error) in
+            return
+            guard
+                let image = UIImage(data:data!)
+                else {return}
+            dispatch_async(dispatch_get_main_queue()){ () -> Void in
+                //s.moviePoster.image=image
+            }
+        }.resume()*/
+        //
         
-        movie=MovieModel.getMovieById(mvId!)
-        
-        movieTitle.text=movie? .title;
-        moviePlot.text=movie?.plot
-        moviePoster.image=UIImage(named:(movie?.poster)!)
+
         // Do any additional setup after loading the view.
     }
 
@@ -42,6 +64,5 @@ class MovieDetailController: UIViewController {
         let sessionListController = segue.destinationViewController as! SessionListController
         sessionListController.mvId=mvId
     }
-    
 
 }

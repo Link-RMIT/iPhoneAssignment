@@ -8,16 +8,13 @@
 
 import UIKit
 
-import Alamofire
-import SwiftyJSON
 
-class MovieListController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
-    var movieList=MovieModel.movieList
-    var filteredMovie=[Movie]()
+class MovieListController: ViewControllerWithIndicator, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+
+    var movieList : [Movie] = [Movie]()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isAccessibilityElement=true;
@@ -45,11 +42,14 @@ class MovieListController: UIViewController, UITableViewDataSource, UITableViewD
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        return self.movieList.count
+        /*return jmovieList == nil ? 0 : jmovieList!["Search"].count
+        
         if( tableView == self.searchDisplayController?.searchResultsTableView){
             return self.filteredMovie.count
         }else{
             return self.movieList.count
-        }
+        }*/
     }
 /*
     func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject)->Bool{
@@ -67,22 +67,26 @@ class MovieListController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = self.tableView.dequeueReusableCellWithIdentifier("movieItem", forIndexPath: indexPath)
 
         // Configure the cell...
+        
+        //var jmovie = jmovieList!["Search"][indexPath.row]
+        //cell.textLabel!.text=jmovie["Title"].string!
+        //cell.imageView!.image=UIImage(named:movie.poster)
+        //cell.detailTextLabel!.text=jmovie["Year"].string!
+        //return cell
+        
+        
         var movie : Movie
-        if( tableView == self.searchDisplayController?.searchResultsTableView){
-            movie = self.filteredMovie[indexPath.row]
-        }else{
-            movie = self.movieList[indexPath.row]
-        }
+        movie = self.movieList[indexPath.row]
 
         
         //movie = movieList[indexPath.row]
-        cell.textLabel!.text=movie.title
-        cell.imageView!.image=UIImage(named:movie.poster)
-        cell.detailTextLabel!.text=movie.year
+        cell.textLabel!.text = movie.title
+        cell.imageView!.image = UIImage(named:movie.poster)
+        cell.detailTextLabel!.text = movie.year
         return cell
     }
     //*/
-    func filterContentForSearchText(searchText: String, scope: String = "Title"){
+    /*func filterContentForSearchText(searchText: String, scope: String = "Title"){
         self.filteredMovie = self.movieList.filter({(m : Movie) -> Bool in
             return scope == "Title" && m.title.rangeOfString(searchText) != nil
         })
@@ -94,21 +98,35 @@ class MovieListController: UIViewController, UITableViewDataSource, UITableViewD
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text!,scope:"Title")
         return true
-    }
-    func searchBar(_ searchBar: UISearchBar,
+    }*/
+    func searchBar(searchBar: UISearchBar,
         textDidChange searchText: String){
             print("asdf")
     }
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar){
+    func searchBarTextDidEndEditing(searchBar: UISearchBar){
         print("eenndd")
     }
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        Alamofire.request(.GET,"https://www.omdbapi.com/?y=&plot=full&r=json&s="+searchBar.text!).responseJSON{ (response)-> Void in
+        let s=self
+        s.startActivity()
+        MovieModel.search(searchBar.text!, callback:{(movieList)-> Void in
+            s.movieList = movieList
+            print("ff")
+            print(movieList.count)
+            print("uu")
+            self.tableView.reloadData()
+            s.stopActivity()
+        })
+        /*Alamofire.request(.GET,"https://www.omdbapi.com/?y=&plot=full&r=json&s="+searchBar.text!).responseJSON{ (response)-> Void in
             if(response.result.value != nil){
                 let r = JSON(response.result.value!)
                 print(r["Search"][0]["Title"])
-            }
-        }
+                print(r["Search"].count)
+                self.jmovieList = r
+                self.tableView.reloadData()
+                s.stopActivity()
+            }   
+        }*/
         print(searchBar.text)
     }
     /*
@@ -146,7 +164,7 @@ class MovieListController: UIViewController, UITableViewDataSource, UITableViewD
     }
     */
 
-
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -155,8 +173,7 @@ class MovieListController: UIViewController, UITableViewDataSource, UITableViewD
         // Pass the selected object to the new view controller.
         let movieDetailViewController = segue.destinationViewController as! MovieDetailController
         let indexPath = self.tableView.indexPathForSelectedRow!
-        movieDetailViewController.mvId=movieList[indexPath.row].id
+        movieDetailViewController.mvId=movieList[indexPath.row].imdbID
     }
     
-
 }

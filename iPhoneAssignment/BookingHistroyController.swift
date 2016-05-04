@@ -47,8 +47,7 @@ class BookingHistroyController: UITableViewController {
         // Configure the cell...
         let booking = bookingHistroy[indexPath.row]
         let session = SessionModel.getSessionById(booking.sessionId)
-        let movie = MovieModel.getMovieById(session.mvId)
-        cell.textLabel!.text=movie?.title
+        cell.textLabel!.text="movie title"
         cell.detailTextLabel!.text=session.date
         return cell
     }
