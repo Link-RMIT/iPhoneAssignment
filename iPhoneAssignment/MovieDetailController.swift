@@ -21,8 +21,8 @@ class MovieDetailController: ViewControllerWithIndicator {
         s.startActivity()
         print(mvId)
         MovieModel.getMovieDetailById(self.mvId, callback:{(movie)-> Void in
-            //s.movieTitle.text=movie?.title;
-            //s.moviePlot.text=movie?.plot
+            s.movieTitle.text = movie?.title;
+            s.moviePlot.text = movie?.plot
             s.stopActivity()
             print(movie?.poster)
             /*if let url = NSURL(string: movie!.poster){
@@ -30,18 +30,18 @@ class MovieDetailController: ViewControllerWithIndicator {
                     s.moviePoster.image = UIImage(data: data)
                 }
             }*/
+            NSURLSession.sharedSession().dataTaskWithURL(NSURL(string:movie!.poster)!){
+                (data, response, error) in
+                guard
+                    let image = UIImage(data:data!)
+                    else {return}
+                dispatch_async(dispatch_get_main_queue()){ () -> Void in
+                    s.moviePoster.image = image
+                }
+            }.resume()
 
         })
-        /*NSURLSession.sharedSession().dataTaskWithURL(NSURL(string:"https://ia.media-imdb.com/images/M/MV5BMTc1OTQzNzE0Nl5BMl5BanBnXkFtZTcwNDU4NDk3Mw@@._V1_SX300.jpg")!){
-            (data, response, error) in
-            return
-            guard
-                let image = UIImage(data:data!)
-                else {return}
-            dispatch_async(dispatch_get_main_queue()){ () -> Void in
-                //s.moviePoster.image=image
-            }
-        }.resume()*/
+
         //
         
 

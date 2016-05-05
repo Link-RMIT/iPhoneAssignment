@@ -8,13 +8,15 @@
 
 import UIKit
 
-
+import Alamofire
+import SwiftyJSON
 
 class MovieListController: ViewControllerWithIndicator, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-
-    var movieList : [Movie] = [Movie]()
+    var testMovie:Movie = Movie(imdbID:"aa",title:"bb",year:"cc",poster:"dd")
+    var movieList : [Movie] = []
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    var jmovieList:JSON?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isAccessibilityElement=true;
@@ -43,9 +45,9 @@ class MovieListController: ViewControllerWithIndicator, UITableViewDataSource, U
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return self.movieList.count
-        /*return jmovieList == nil ? 0 : jmovieList!["Search"].count
+        return jmovieList == nil ? 0 : jmovieList!["Search"].count
         
-        if( tableView == self.searchDisplayController?.searchResultsTableView){
+       /* if( tableView == self.searchDisplayController?.searchResultsTableView){
             return self.filteredMovie.count
         }else{
             return self.movieList.count
@@ -67,12 +69,11 @@ class MovieListController: ViewControllerWithIndicator, UITableViewDataSource, U
         let cell = self.tableView.dequeueReusableCellWithIdentifier("movieItem", forIndexPath: indexPath)
 
         // Configure the cell...
-        
-        //var jmovie = jmovieList!["Search"][indexPath.row]
-        //cell.textLabel!.text=jmovie["Title"].string!
+        /*var jmovie = jmovieList!["Search"][indexPath.row]
+        cell.textLabel!.text = jmovie["Title"].string!
         //cell.imageView!.image=UIImage(named:movie.poster)
-        //cell.detailTextLabel!.text=jmovie["Year"].string!
-        //return cell
+        cell.detailTextLabel!.text = jmovie["Year"].string!
+        return cell*/
         
         
         var movie : Movie
@@ -107,27 +108,25 @@ class MovieListController: ViewControllerWithIndicator, UITableViewDataSource, U
         print("eenndd")
     }
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        let s=self
+       let s=self
         s.startActivity()
-        MovieModel.search(searchBar.text!, callback:{(movieList)-> Void in
-            guard
-            print("f1")
+         MovieModel.search(searchBar.text!, callback:{(movieList)-> Void in
             s.movieList = movieList
-            
-            print("f2")
             print(movieList.count)
-            print("f3")
             self.tableView.reloadData()
             s.stopActivity()
-            else{return}
         })
-        /*Alamofire.request(.GET,"https://www.omdbapi.com/?y=&plot=full&r=json&s="+searchBar.text!).responseJSON{ (response)-> Void in
+        /*Alamofire.request(.GET,"https://www.omdbapi.com/",parameters: ["plot":"full","r":"json","s":searchBar.text!]).responseJSON{ (response)-> Void in
             if(response.result.value != nil){
                 let r = JSON(response.result.value!)
                 print(r["Search"][0]["Title"])
                 print(r["Search"].count)
                 self.jmovieList = r
                 self.tableView.reloadData()
+                s.movieList = JSON(response.result.value!)["Search"].arrayValue.map{
+                    (jmovie) -> Movie in
+                    return Movie(movie:jmovie)
+                }
                 s.stopActivity()
             }   
         }*/

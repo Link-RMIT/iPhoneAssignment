@@ -6,11 +6,10 @@
 //  Copyright © 2016 rmit. All rights reserved.
 //
 
-import Alamofire
-import SwiftyJSON
-
 import Foundation
 
+import Alamofire
+import SwiftyJSON
 
 class Movie{
     var imdbID:String
@@ -18,16 +17,19 @@ class Movie{
     var year:String
     var poster:String
     init(imdbID:String,title:String,year:String,poster:String){
-        self.imdbID=imdbID
-        self.title=title
-        self.year=year
-        self.poster=poster
+        self.imdbID = imdbID
+        self.title = title
+        self.year = year
+        self.poster = poster
     }
     init(movie:JSON){
         self.imdbID = movie["imdbID"].string!
         self.title = movie["Title"].string!
         self.year = movie["Year"].string!
         self.poster = movie["Poster"].string!
+    }
+    deinit{
+        print("deinit:")
     }
 }
 class MovieDetail: Movie
@@ -116,32 +118,30 @@ class MovieModel
         Movie(id: "tt0457939", title: "The Holiday",  year: "2006", plot: "Two women troubled with guy-problems swap homes in each other's countries, where they each meet a local guy and fall in love.")
     ]*/
     static func getMovieDetailById(id:String!, callback:(MovieDetail?)->Void) -> Void{
-        Alamofire.request(.GET,"https://www.omdbapi.com/?plot=full&r=json&i="+id).responseJSON{ (response)-> Void in
-            if(response.result.value != nil){
-                callback(MovieDetail(movie: JSON(response.result.value!)))
+        Alamofire.request(.GET,"https://www.omdbapi.com/",parameters:["plot": "full", "r": "json", "i":id]).responseJSON{ (response)-> Void in
+            
+            dispatch_async(dispatch_get_main_queue()){
+                var movie:MovieDetail?
+                if(response.result.value != nil){
+                    movie = MovieDetail(movie: JSON(response.result.value!))
+                }
+                callback(movie)
             }
-            else{
-                callback(nil)
-            }
+
         }
     }
     static func search(keywords:String!,callback:([Movie])->Void){
         Alamofire.request(.GET,"https://www.omdbapi.com/?y=&plot=full&r=json&s="+keywords).responseJSON{ (response)-> Void in
-            if(response.result.value != nil){
-                var count:Int=0
-                let r=JSON(response.result.value!)["Search"].arrayValue.map{
-                    (jmovie) -> Movie in
-                    print (count)
-                    count=count+1
-                    return Movie(movie:jmovie)
+
+            dispatch_async(dispatch_get_main_queue()){
+                var movieArray:[Movie] = []
+                if(response.result.value != nil){
+                    movieArray=JSON(response.result.value!)["Search"].arrayValue.map{
+                        (jmovie) -> Movie in
+                        return Movie(movie:jmovie)
+                    }
                 }
-                print("fuck")
-                callback(
-                    r
-                )
-                print("fuck22")
-            }else{
-                callback([Movie]())
+                callback(movieArray)
             }
         }
     }
@@ -155,22 +155,22 @@ class Session
     var date:String
     var price:Float
     var sit:Int
-    static var cid=0
+    static var cid = 0
     init(id:String,mvid:String,date:String,price:Float,sit:Int)
     {
-        self.id=id
-        self.mvId=mvid
-        self.date=date
-        self.price=price
-        self.sit=sit
+        self.id = id
+        self.mvId = mvid
+        self.date = date
+        self.price = price
+        self.sit = sit
     }
     
     /*init()
     {
-        self.id=Session.cid.description
-        Session.cid=Session.cid+1
-        date="DD/MM/YYYY"
-        price=10.0
+        self.id = Session.cid.description
+        Session.cid = Session.cid+1
+        date = "DD/MM/YYYY"
+        price = 10.0
         sit = Int(arc4random_uniform(UInt32(MovieModel.movieList.count)))
         mvId = MovieModel.movieList[Int(arc4random_uniform(UInt32(MovieModel.movieList.count)))].id
     }*/
@@ -178,13 +178,13 @@ class Session
 }
 
 class SessionModel{
-    static var sessionList:[Session]=SessionModel.ini(100)
+    static var sessionList:[Session] = SessionModel.ini(100)
     static func ini(n:Int)->[Session]{
-        var l:[Session]=[]
-        var nn=n
+        var l:[Session] = []
+        var nn = n
         while(nn>0){
             //l.append(Session())
-            nn=nn-1
+            nn = nn-1
         }
         return l
     }
@@ -198,7 +198,7 @@ class SessionModel{
         return nil
     }
     static func getSessionById(sessionId:String)->Session{
-        return sessionList.filter({(s:Session)->Bool in return s.id==sessionId}).first!
+        return sessionList.filter({(s:Session)->Bool in return s.id == sessionId}).first!
     }
     
 }
@@ -212,7 +212,7 @@ class Booking
     {
         self.id=id;
         self.sessionId=sessionId
-        self.credictCardNumber=credictCardNumber
+        self.credictCardNumber = credictCardNumber
     }
     
 }
@@ -221,8 +221,8 @@ class BookingModel
 {
     static var bookingList:[Booking]=BookingModel.ini(10)
     static func ini(n:Int)->[Booking]{
-        var l:[Booking]=[]
-        var nn=n
+        var l:[Booking] = []
+        var nn = n
         /*while(nn>0){
             let sid=SessionModel.sessionList[Int(arc4random_uniform(UInt32(SessionModel.sessionList.count)))].id
             l.append(Booking(id: nn.description,sessionId: sid,credictCardNumber: "2093485723450"))
