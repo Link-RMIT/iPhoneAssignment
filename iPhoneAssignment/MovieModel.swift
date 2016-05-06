@@ -7,9 +7,13 @@
 //
 
 import Foundation
-
+import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreData
+
+
+
 
 class Movie{
     var imdbID:String
@@ -147,22 +151,22 @@ class MovieModel
     }
     
 }
-
+/*
 class Session
 {
     var id:String
     var mvId:String
     var date:String
     var price:Float
-    var sit:Int
+    var sitNumber:Int
     static var cid = 0
-    init(id:String,mvid:String,date:String,price:Float,sit:Int)
+    init(id:String,mvid:String,date:String,price:Float,sitNumber:Int)
     {
         self.id = id
         self.mvId = mvid
         self.date = date
         self.price = price
-        self.sit = sit
+        self.sitNumber = sitNumber
     }
     
     /*init()
@@ -178,6 +182,17 @@ class Session
 }
 
 class SessionModel{
+    
+    static let request = NSFetchRequest(entityName: "Session")
+    
+    class Field{
+        static let ID = "id"
+        static let MVID = "mvId"
+        static let DATE = "date"
+        static let PRICE = "price"
+        static let SIT_NUMBER = "sitNumber"
+    }
+    
     static var sessionList:[Session] = SessionModel.ini(100)
     static func ini(n:Int)->[Session]{
         var l:[Session] = []
@@ -200,7 +215,10 @@ class SessionModel{
     static func getSessionById(sessionId:String)->Session{
         return sessionList.filter({(s:Session)->Bool in return s.id == sessionId}).first!
     }
-    
+    static func filter(id:String) -> [Session]{
+        SessionModel.request.predicate = NSPredicate(format: "%K = %s", SessionModel.Field.ID)
+        let object = try
+    }
 }
 
 class Booking
@@ -219,6 +237,8 @@ class Booking
 
 class BookingModel
 {
+
+
     static var bookingList:[Booking]=BookingModel.ini(10)
     static func ini(n:Int)->[Booking]{
         var l:[Booking] = []
@@ -230,4 +250,4 @@ class BookingModel
         }*/
         return l
     }
-}
+}*/

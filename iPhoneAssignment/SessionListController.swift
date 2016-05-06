@@ -19,8 +19,8 @@ class SessionListController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        sessionList=SessionModel.getSessionByMovie(mvId!)
-        print(sessionList!.count)
+        //sessionList=SessionModel.getSessionByMovie(mvId!)
+        //print(sessionList!.count)
         
     }
 
@@ -47,8 +47,8 @@ class SessionListController: UITableViewController {
 
         // Configure the cell...
         let session = sessionList![indexPath.row]
-        cell.textLabel!.text=session.date
-        cell.detailTextLabel!.text=session.sit.description
+        //cell.textLabel!.text=session.date
+        //cell.detailTextLabel!.text=session.sit.description
         print(session.date)
         return cell
     }

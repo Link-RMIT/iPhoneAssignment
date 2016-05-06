@@ -9,7 +9,7 @@
 import UIKit
 
 class BookingHistroyController: UITableViewController {
-    let bookingHistroy=BookingModel.bookingList
+    // bookingHistroy=BookingModel.bookingList
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +19,7 @@ class BookingHistroyController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         print("asdf")
-        print(bookingHistroy.count)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,8 +36,8 @@ class BookingHistroyController: UITableViewController {
 */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(bookingHistroy.count)
-        return bookingHistroy.count
+        
+        return 0
     }
 
     
@@ -45,10 +45,10 @@ class BookingHistroyController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("bookingItem", forIndexPath: indexPath)
 
         // Configure the cell...
-        let booking = bookingHistroy[indexPath.row]
-        let session = SessionModel.getSessionById(booking.sessionId)
-        cell.textLabel!.text="movie title"
-        cell.detailTextLabel!.text=session.date
+        //let booking = bookingHistroy[indexPath.row]
+        //let session = SessionModel.getSessionById(booking.sessionId)
+        //cell.textLabel!.text="movie title"
+        //cell.detailTextLabel!.text=session.date
         return cell
     }
 
