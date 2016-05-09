@@ -10,7 +10,7 @@ import UIKit
 
 class SessionListController: UITableViewController {
     var mvId:String?
-    var sessionList:[Session]?
+    var sessionList:[Session]=[]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +21,8 @@ class SessionListController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         //sessionList=SessionModel.getSessionByMovie(mvId!)
         //print(sessionList!.count)
-        
+        /*self.sessionList = Session.filter(NSPredicate(format:"%K = %d", Session.Field.mvId, mvId!))*/
+        self.sessionList = Session.filter(mvId!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +39,7 @@ class SessionListController: UITableViewController {
     */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return sessionList!.count
+        return sessionList.count
     }
 
 
@@ -46,7 +47,7 @@ class SessionListController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("sessionItem", forIndexPath: indexPath)
 
         // Configure the cell...
-        let session = sessionList![indexPath.row]
+        let session = sessionList[indexPath.row]
         //cell.textLabel!.text=session.date
         //cell.detailTextLabel!.text=session.sit.description
         print(session.date)

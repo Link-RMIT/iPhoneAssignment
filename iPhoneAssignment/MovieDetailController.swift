@@ -30,6 +30,7 @@ class MovieDetailController: ViewControllerWithIndicator {
                     s.moviePoster.image = UIImage(data: data)
                 }
             }*/
+            if movie!.poster=="N/A"{ return}
             NSURLSession.sharedSession().dataTaskWithURL(NSURL(string:movie!.poster)!){
                 (data, response, error) in
                 guard
