@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
     <entity name="Booking" representedClassName=".Booking" syncable="YES">
         <attribute name="credictCardNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,7 +13,7 @@
         <attribute name="sitNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Booking" positionX="-54" positionY="-9" width="128" height="90"/>
-        <element name="Session" positionX="-36" positionY="36" width="128" height="120"/>
+        <element name="Booking" positionX="-146" positionY="56" width="128" height="88"/>
+        <element name="Session" positionX="81" positionY="9" width="128" height="120"/>
     </elements>
 </model>

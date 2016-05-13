@@ -26,6 +26,7 @@
 		9E6A4EF61C9FD09600E94F2F /* iPhoneAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EF51C9FD09600E94F2F /* iPhoneAssignmentTests.swift */; };
 		9E6A4F011C9FD09600E94F2F /* iPhoneAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4F001C9FD09600E94F2F /* iPhoneAssignmentUITests.swift */; };
 		9E6A4F101C9FD3AF00E94F2F /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4F0F1C9FD3AF00E94F2F /* MovieModel.swift */; };
+		9EDDE1F41CE5AF4A0070A323 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDDE1F31CE5AF4A0070A323 /* BookingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		9E6A4F001C9FD09600E94F2F /* iPhoneAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneAssignmentUITests.swift; sourceTree = "<group>"; };
 		9E6A4F021C9FD09600E94F2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E6A4F0F1C9FD3AF00E94F2F /* MovieModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		9EDDE1F31CE5AF4A0070A323 /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		D38809555907EEF45DC205FA /* Pods-iPhoneAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhoneAssignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPhoneAssignment/Pods-iPhoneAssignment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 				761B241D1CA4E8B0005CE426 /* MovieListController.swift */,
 				761B24211CA4F9CA005CE426 /* MovieDetailController.swift */,
 				764BE0AA1CDA13920046E772 /* ViewControllerWithIndicator.swift */,
+				9EDDE1F31CE5AF4A0070A323 /* BookingViewController.swift */,
 				761B24231CA53DF1005CE426 /* SessionListController.swift */,
 				761B24251CA54FB7005CE426 /* BookingHistroyController.swift */,
 			);
@@ -392,6 +395,7 @@
 				76E72E791CDC826700D981EA /* Core_Data_Persistence.xcdatamodeld in Sources */,
 				761B24221CA4F9CA005CE426 /* MovieDetailController.swift in Sources */,
 				9E6A4EE31C9FD09600E94F2F /* ViewController.swift in Sources */,
+				9EDDE1F41CE5AF4A0070A323 /* BookingViewController.swift in Sources */,
 				9E6A4EE11C9FD09600E94F2F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

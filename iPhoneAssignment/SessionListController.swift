@@ -48,8 +48,8 @@ class SessionListController: UITableViewController {
 
         // Configure the cell...
         let session = sessionList[indexPath.row]
-        //cell.textLabel!.text=session.date
-        //cell.detailTextLabel!.text=session.sit.description
+        cell.textLabel!.text = session.date!.description
+        cell.detailTextLabel!.text = session.sitNumber!.stringValue
         print(session.date)
         return cell
     }
@@ -90,14 +90,17 @@ class SessionListController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let bookingViewController = segue.destinationViewController as! BookingViewController
+        let indexPath = self.tableView.indexPathForSelectedRow!
+        bookingViewController.session=sessionList[indexPath.row]
     }
-    */
+
 
 }

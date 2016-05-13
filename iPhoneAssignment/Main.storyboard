@@ -293,10 +293,10 @@
             </objects>
             <point key="canvasLocation" x="1928.25" y="1041.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Booking View Controller-->
         <scene sceneID="tDE-q2-1VH">
             <objects>
-                <viewController id="4Tt-tc-sLK" sceneMemberID="viewController">
+                <viewController id="4Tt-tc-sLK" customClass="BookingViewController" customModule="iPhoneAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qgb-Fa-IJ0"/>
                         <viewControllerLayoutGuide type="bottom" id="giR-tf-cun"/>
@@ -425,6 +425,13 @@ UHJpY2U6IAg
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="creditCardNumber" destination="KAh-OL-E30" id="IHc-qa-tE4"/>
+                        <outlet property="movieTitle" destination="ANB-KW-Mnw" id="0ci-x4-mBK"/>
+                        <outlet property="number" destination="BGu-ly-xr0" id="VXY-an-Qjj"/>
+                        <outlet property="price" destination="e6s-V7-mqH" id="tUw-vl-EDe"/>
+                        <outlet property="sessionDate" destination="PID-M5-9Vp" id="Oes-Eh-Pux"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Y2-6X-woU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
