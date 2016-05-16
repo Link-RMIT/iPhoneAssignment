@@ -2,7 +2,7 @@
 //  Booking+CoreDataProperties.swift
 //  
 //
-//  Created by Cookie on 16/5/6.
+//  Created by Yihui Lin on 16/05/2016.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,8 +14,10 @@ import CoreData
 
 extension Booking {
 
-    @NSManaged var id: String?
     @NSManaged var credictCardNumber: String?
+    @NSManaged var id: String?
     @NSManaged var sessionId: String?
+    @NSManaged var price: NSNumber?
+    @NSManaged var quantity: NSNumber?
 
 }

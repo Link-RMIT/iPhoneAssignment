@@ -70,7 +70,7 @@ class Booking: NSManagedObject {
     func save(){
         self.appDelegate!.saveContext()
     }*/
-    static func save(credictCardNumber:String,sessionId:String){
+    static func save(credictCardNumber:String,sessionId:String,price:Double,quantity:Int){
         let appDelegate:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         let context:NSManagedObjectContext = appDelegate.managedObjectContext
         let booking = NSEntityDescription.insertNewObjectForEntityForName(

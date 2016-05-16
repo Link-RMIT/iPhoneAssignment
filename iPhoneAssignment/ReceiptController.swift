@@ -1,32 +1,28 @@
 //
-//  BookingViewController.swift
+//  ReceiptController.swift
 //  iPhoneAssignment
 //
-//  Created by Yihui Lin on 13/05/2016.
+//  Created by Yihui Lin on 16/05/2016.
 //  Copyright © 2016 rmit. All rights reserved.
 //
 
 import UIKit
 
-class BookingViewController: UIViewController {
+class ReceiptController: UIViewController {
 
     @IBOutlet weak var movieTitle: UILabel!
-    @IBOutlet weak var sessionDate: UILabel!
-    @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var number: UITextField!
-    @IBOutlet weak var creditCardNumber: UITextField!
     
+    @IBOutlet weak var receiptNumber: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var quantity: UILabel!
+    @IBOutlet weak var date: UILabel!
+    
+    var booking:Booking?;
     var session:Session?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let s = self.session!
-        self.movieTitle.text = s.mvId
-        self.sessionDate.text = s.date!.description
-        self.price.text = "$" + s.price!.description
-        
-        
         // Do any additional setup after loading the view.
     }
 
@@ -36,15 +32,14 @@ class BookingViewController: UIViewController {
     }
     
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        Booking.save(creditCardNumber.text!, sessionId: session!.id!, price: session!.price!.doubleValue, quantity: Int(number.text!)!)
     }
-
+    */
 
 }

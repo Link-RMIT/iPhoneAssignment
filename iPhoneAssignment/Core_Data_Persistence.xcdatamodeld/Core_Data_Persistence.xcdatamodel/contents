@@ -3,6 +3,8 @@
     <entity name="Booking" representedClassName=".Booking" syncable="YES">
         <attribute name="credictCardNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 64" defaultValueString="0.0" syncable="YES"/>
         <attribute name="sessionId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Session" representedClassName=".Session" syncable="YES">
@@ -13,7 +15,7 @@
         <attribute name="sitNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Booking" positionX="-146" positionY="56" width="128" height="88"/>
+        <element name="Booking" positionX="-146" positionY="56" width="128" height="120"/>
         <element name="Session" positionX="81" positionY="9" width="128" height="120"/>
     </elements>
 </model>

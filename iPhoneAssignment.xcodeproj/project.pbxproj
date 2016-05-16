@@ -19,6 +19,7 @@
 		76E72E871CDC893200D981EA /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E72E831CDC893200D981EA /* Booking.swift */; };
 		76E72E881CDC893200D981EA /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E72E841CDC893200D981EA /* Session+CoreDataProperties.swift */; };
 		76E72E891CDC893200D981EA /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E72E851CDC893200D981EA /* Session.swift */; };
+		9E4073E31CE9B971001029F9 /* ReceiptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4073E21CE9B971001029F9 /* ReceiptController.swift */; };
 		9E6A4EE11C9FD09600E94F2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE01C9FD09600E94F2F /* AppDelegate.swift */; };
 		9E6A4EE31C9FD09600E94F2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE21C9FD09600E94F2F /* ViewController.swift */; };
 		9E6A4EE81C9FD09600E94F2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE71C9FD09600E94F2F /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		76E72E831CDC893200D981EA /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		76E72E841CDC893200D981EA /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		76E72E851CDC893200D981EA /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		9E4073E21CE9B971001029F9 /* ReceiptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptController.swift; sourceTree = "<group>"; };
 		9E6A4EDD1C9FD09600E94F2F /* iPhoneAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhoneAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6A4EE01C9FD09600E94F2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E6A4EE21C9FD09600E94F2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				761B241D1CA4E8B0005CE426 /* MovieListController.swift */,
 				761B24211CA4F9CA005CE426 /* MovieDetailController.swift */,
 				764BE0AA1CDA13920046E772 /* ViewControllerWithIndicator.swift */,
+				9E4073E21CE9B971001029F9 /* ReceiptController.swift */,
 				9EDDE1F31CE5AF4A0070A323 /* BookingViewController.swift */,
 				761B24231CA53DF1005CE426 /* SessionListController.swift */,
 				761B24251CA54FB7005CE426 /* BookingHistroyController.swift */,
@@ -383,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E4073E31CE9B971001029F9 /* ReceiptController.swift in Sources */,
 				76E72E881CDC893200D981EA /* Session+CoreDataProperties.swift in Sources */,
 				761B24241CA53DF1005CE426 /* SessionListController.swift in Sources */,
 				76E72E871CDC893200D981EA /* Booking.swift in Sources */,
