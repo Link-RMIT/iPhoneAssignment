@@ -19,12 +19,12 @@ class Session: NSManagedObject {
 
     static let entityName = "Session"
     
-    class Field{
-        static let mvId = "mvId"
-        static let id = "id"
-        static let date = "date"
-        static let price = "price"
-        static let sitNumber = "sitNumber"
+    enum Fields: String{
+        case mvId
+        case id
+        case date
+        case price
+        case sitNumber
     }
     /*static func filter(pred : NSPredicate) -> [Session]{
         let request = NSFetchRequest(entityName: "Session")
@@ -52,14 +52,14 @@ class Session: NSManagedObject {
             inManagedObjectContext: context)
             as! Session
     }
-    static func filter(mvId:String) -> [Session]{
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
-        let context = appDelegate.managedObjectContext
+    static func filter(key:Fields,value:String) -> [Session]{
+        //let appDelegate =
+        //UIApplication.sharedApplication().delegate as! AppDelegate
+        //let context = appDelegate.managedObjectContext
         
         let request = NSFetchRequest(entityName: Session.entityName)
-        print(mvId)
-        request.predicate = NSPredicate(format: "%K=%@",Session.Field.mvId,mvId)
+        print(value)
+        request.predicate = NSPredicate(format: "%K = %@",key.rawValue,value)
         
         var sessions:[Session]=[]
         do{
@@ -68,13 +68,13 @@ class Session: NSManagedObject {
             if(sessions.count==0){
                 var n = Int(arc4random_uniform(UInt32(7)) + 3)
                 while (n>0){
-                    Session.randSession(mvId)
+                    Session.randSession(value)
                     //print(n)
                     n=n-1
                 }
                 print(n)
                 appDelegate.saveContext()
-                return filter(mvId)
+                return filter(key,value: value)
                 
             }
         } catch {
@@ -84,16 +84,18 @@ class Session: NSManagedObject {
         return sessions
     }
     
+
+    
     static func randSession(mvId:String){
         //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         //let context = appDelegate.managedObjectContext
 
-        var session = Session.newEntity(context)
+        let session = Session.newEntity(context)
         session.mvId = mvId
         session.id = NSUUID().UUIDString
         session.price = Float(arc4random_uniform(UInt32(25)) + 5)
         
-        session.date = NSDate(timeIntervalSince1970: 1400000)
+        session.date = NSDate(timeIntervalSince1970: Double(1463378400) + Double(arc4random_uniform(UInt32(24*14)))*3600)
         session.sitNumber = Int(arc4random_uniform(UInt32(25)) + 5)
         //session.setValue(mvId, forKey: "mvId")
         

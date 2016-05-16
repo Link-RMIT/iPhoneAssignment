@@ -22,7 +22,7 @@ class SessionListController: UITableViewController {
         //sessionList=SessionModel.getSessionByMovie(mvId!)
         //print(sessionList!.count)
         /*self.sessionList = Session.filter(NSPredicate(format:"%K = %d", Session.Field.mvId, mvId!))*/
-        self.sessionList = Session.filter(mvId!)
+        self.sessionList = Session.filter(Session.Fields.mvId,value: mvId!)
     }
 
     override func didReceiveMemoryWarning() {

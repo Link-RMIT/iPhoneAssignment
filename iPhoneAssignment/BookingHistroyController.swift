@@ -9,7 +9,7 @@
 import UIKit
 
 class BookingHistroyController: UITableViewController {
-    // bookingHistroy=BookingModel.bookingList
+    let bookingHistroy = Booking.all()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,10 +45,10 @@ class BookingHistroyController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("bookingItem", forIndexPath: indexPath)
 
         // Configure the cell...
-        //let booking = bookingHistroy[indexPath.row]
-        //let session = SessionModel.getSessionById(booking.sessionId)
-        //cell.textLabel!.text="movie title"
-        //cell.detailTextLabel!.text=session.date
+        let booking = bookingHistroy[indexPath.row]
+        let session = Session.filter(Session.Fields.id, value: booking.sessionId!).first
+        cell.textLabel!.text = "movie title"
+        cell.detailTextLabel!.text = session!.date!.description
         return cell
     }
 
