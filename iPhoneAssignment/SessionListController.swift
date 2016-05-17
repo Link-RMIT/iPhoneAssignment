@@ -99,7 +99,7 @@ class SessionListController: UITableViewController {
         // Pass the selected object to the new view controller.
         let bookingViewController = segue.destinationViewController as! BookingViewController
         let indexPath = self.tableView.indexPathForSelectedRow!
-        bookingViewController.session=sessionList[indexPath.row]
+        bookingViewController.session = sessionList[indexPath.row]
     }
 
 

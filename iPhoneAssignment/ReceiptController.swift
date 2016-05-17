@@ -24,6 +24,14 @@ class ReceiptController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if(self.session == nil){
+            self.session = Session.filter(Session.Fields.id, value: self.booking!.sessionId!).first
+        }
+        movieTitle.text = self.session!.mvId
+        receiptNumber.text = self.session!.id
+        price.text = session!.price!.description
+        quantity.text = booking!.quantity!.description
+        date.text = session!.date!.description
     }
 
     override func didReceiveMemoryWarning() {

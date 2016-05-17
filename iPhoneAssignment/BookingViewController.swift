@@ -43,7 +43,11 @@ class BookingViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        Booking.save(creditCardNumber.text!, sessionId: session!.id!, price: session!.price!.doubleValue, quantity: Int(number.text!)!)
+        let booking = Booking.save(creditCardNumber.text!, sessionId: session!.id!, quantity: Int(number.text!)!)
+        let receiptViewController = segue.destinationViewController as! ReceiptController
+        receiptViewController.session = self.session!
+        receiptViewController.booking = booking
+        
     }
 
 
