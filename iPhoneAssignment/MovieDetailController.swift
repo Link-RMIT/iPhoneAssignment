@@ -12,7 +12,8 @@ class MovieDetailController: ViewControllerWithIndicator {
     
     var mvId:String?
     @IBOutlet weak var movieTitle:UILabel!
-    @IBOutlet weak var moviePlot:UILabel!
+    //@IBOutlet weak var moviePlot:UILabel!
+    @IBOutlet weak var moviePlot: UITextView!
     @IBOutlet weak var moviePoster:UIImageView!
     var movie:MovieDetail?
     override func viewDidLoad() {
