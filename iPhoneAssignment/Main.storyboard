@@ -302,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvc-CD-chy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928.25" y="1041.75"/>
+            <point key="canvasLocation" x="2027.5" y="1062.5"/>
         </scene>
         <!--Booking View Controller-->
         <scene sceneID="tDE-q2-1VH">
@@ -447,7 +447,7 @@ UHJpY2U6IAg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Y2-6X-woU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584.5" y="1054.5"/>
+            <point key="canvasLocation" x="2586.5" y="1062.5"/>
         </scene>
         <!--Session List Controller-->
         <scene sceneID="ejW-cr-xsr">

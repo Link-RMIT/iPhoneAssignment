@@ -19,6 +19,10 @@
 		76E72E871CDC893200D981EA /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E72E831CDC893200D981EA /* Booking.swift */; };
 		76E72E881CDC893200D981EA /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E72E841CDC893200D981EA /* Session+CoreDataProperties.swift */; };
 		76E72E891CDC893200D981EA /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E72E851CDC893200D981EA /* Session.swift */; };
+		9E12719B1CEDC094002426EB /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E12719A1CEDC094002426EB /* NotificationCenter.framework */; };
+		9E12719E1CEDC094002426EB /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E12719D1CEDC094002426EB /* TodayViewController.swift */; };
+		9E1271A11CEDC094002426EB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E12719F1CEDC094002426EB /* MainInterface.storyboard */; };
+		9E1271A51CEDC094002426EB /* Assignment2Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9E1271991CEDC094002426EB /* Assignment2Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9E4073E31CE9B971001029F9 /* ReceiptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4073E21CE9B971001029F9 /* ReceiptController.swift */; };
 		9E6A4EE11C9FD09600E94F2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE01C9FD09600E94F2F /* AppDelegate.swift */; };
 		9E6A4EE31C9FD09600E94F2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE21C9FD09600E94F2F /* ViewController.swift */; };
@@ -31,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9E1271A31CEDC094002426EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E6A4ED51C9FD09600E94F2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9E1271981CEDC094002426EB;
+			remoteInfo = Assignment2Extension;
+		};
 		9E6A4EF21C9FD09600E94F2F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9E6A4ED51C9FD09600E94F2F /* Project object */;
@@ -47,6 +58,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9E1271A91CEDC094002426EB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9E1271A51CEDC094002426EB /* Assignment2Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		289E4501EA0CAD1E33661E99 /* Pods-iPhoneAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhoneAssignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPhoneAssignment/Pods-iPhoneAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 		5F9E435D97B7FABD73D778B6 /* Pods_iPhoneAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPhoneAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +86,11 @@
 		76E72E831CDC893200D981EA /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		76E72E841CDC893200D981EA /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		76E72E851CDC893200D981EA /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		9E1271991CEDC094002426EB /* Assignment2Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Assignment2Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E12719A1CEDC094002426EB /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		9E12719D1CEDC094002426EB /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		9E1271A01CEDC094002426EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		9E1271A21CEDC094002426EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E4073E21CE9B971001029F9 /* ReceiptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptController.swift; sourceTree = "<group>"; };
 		9E6A4EDD1C9FD09600E94F2F /* iPhoneAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhoneAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6A4EE01C9FD09600E94F2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +110,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9E1271961CEDC094002426EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E12719B1CEDC094002426EB /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E6A4EDA1C9FD09600E94F2F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -109,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				5F9E435D97B7FABD73D778B6 /* Pods_iPhoneAssignment.framework */,
+				9E12719A1CEDC094002426EB /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,12 +166,23 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		9E12719C1CEDC094002426EB /* Assignment2Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9E12719D1CEDC094002426EB /* TodayViewController.swift */,
+				9E12719F1CEDC094002426EB /* MainInterface.storyboard */,
+				9E1271A21CEDC094002426EB /* Info.plist */,
+			);
+			path = Assignment2Extension;
+			sourceTree = "<group>";
+		};
 		9E6A4ED41C9FD09600E94F2F = {
 			isa = PBXGroup;
 			children = (
 				9E6A4EDF1C9FD09600E94F2F /* iPhoneAssignment */,
 				9E6A4EF41C9FD09600E94F2F /* iPhoneAssignmentTests */,
 				9E6A4EFF1C9FD09600E94F2F /* iPhoneAssignmentUITests */,
+				9E12719C1CEDC094002426EB /* Assignment2Extension */,
 				9E6A4EDE1C9FD09600E94F2F /* Products */,
 				C7A2A30AA2E73ADDC60530DF /* Pods */,
 				53FA806DBBA7AB0D9A6332F1 /* Frameworks */,
@@ -145,6 +195,7 @@
 				9E6A4EDD1C9FD09600E94F2F /* iPhoneAssignment.app */,
 				9E6A4EF11C9FD09600E94F2F /* iPhoneAssignmentTests.xctest */,
 				9E6A4EFC1C9FD09600E94F2F /* iPhoneAssignmentUITests.xctest */,
+				9E1271991CEDC094002426EB /* Assignment2Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,6 +258,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9E1271981CEDC094002426EB /* Assignment2Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E1271A81CEDC094002426EB /* Build configuration list for PBXNativeTarget "Assignment2Extension" */;
+			buildPhases = (
+				9E1271951CEDC094002426EB /* Sources */,
+				9E1271961CEDC094002426EB /* Frameworks */,
+				9E1271971CEDC094002426EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Assignment2Extension;
+			productName = Assignment2Extension;
+			productReference = 9E1271991CEDC094002426EB /* Assignment2Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		9E6A4EDC1C9FD09600E94F2F /* iPhoneAssignment */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E6A4F051C9FD09600E94F2F /* Build configuration list for PBXNativeTarget "iPhoneAssignment" */;
@@ -217,10 +285,12 @@
 				9E6A4EDB1C9FD09600E94F2F /* Resources */,
 				940172121BF44184FE678D57 /* Embed Pods Frameworks */,
 				9DA42B4E545C22B8F8FAA88E /* Copy Pods Resources */,
+				9E1271A91CEDC094002426EB /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9E1271A41CEDC094002426EB /* PBXTargetDependency */,
 			);
 			name = iPhoneAssignment;
 			productName = iPhoneAssignment;
@@ -273,6 +343,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = rmit;
 				TargetAttributes = {
+					9E1271981CEDC094002426EB = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					9E6A4EDC1C9FD09600E94F2F = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -302,11 +375,20 @@
 				9E6A4EDC1C9FD09600E94F2F /* iPhoneAssignment */,
 				9E6A4EF01C9FD09600E94F2F /* iPhoneAssignmentTests */,
 				9E6A4EFB1C9FD09600E94F2F /* iPhoneAssignmentUITests */,
+				9E1271981CEDC094002426EB /* Assignment2Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9E1271971CEDC094002426EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E1271A11CEDC094002426EB /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E6A4EDB1C9FD09600E94F2F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,6 +464,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9E1271951CEDC094002426EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E12719E1CEDC094002426EB /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E6A4ED91C9FD09600E94F2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,6 +513,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9E1271A41CEDC094002426EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9E1271981CEDC094002426EB /* Assignment2Extension */;
+			targetProxy = 9E1271A31CEDC094002426EB /* PBXContainerItemProxy */;
+		};
 		9E6A4EF31C9FD09600E94F2F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9E6A4EDC1C9FD09600E94F2F /* iPhoneAssignment */;
@@ -436,6 +531,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9E12719F1CEDC094002426EB /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E1271A01CEDC094002426EB /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		9E6A4EE91C9FD09600E94F2F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,6 +550,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9E1271A61CEDC094002426EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Assignment2Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmit.iphone.iPhoneAssignment.Assignment2Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9E1271A71CEDC094002426EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Assignment2Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmit.iphone.iPhoneAssignment.Assignment2Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		9E6A4F031C9FD09600E94F2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -535,6 +660,7 @@
 			baseConfigurationReference = 289E4501EA0CAD1E33661E99 /* Pods-iPhoneAssignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iPhoneAssignment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rmit.iphone.iPhoneAssignment;
@@ -547,6 +673,7 @@
 			baseConfigurationReference = D38809555907EEF45DC205FA /* Pods-iPhoneAssignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iPhoneAssignment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rmit.iphone.iPhoneAssignment;
@@ -605,6 +732,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9E1271A81CEDC094002426EB /* Build configuration list for PBXNativeTarget "Assignment2Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E1271A61CEDC094002426EB /* Debug */,
+				9E1271A71CEDC094002426EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		9E6A4ED81C9FD09600E94F2F /* Build configuration list for PBXProject "iPhoneAssignment" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
