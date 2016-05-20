@@ -8,7 +8,8 @@
 
 import XCTest
 @testable import iPhoneAssignment
-
+@testable import Alamofire
+@testable import SwiftyJSON
 
 
 class iPhoneAssignmentTests: XCTestCase {
