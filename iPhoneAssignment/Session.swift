@@ -14,8 +14,7 @@ import CoreData
 class Session: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
-    static let appDelegate:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
-    static let context = appDelegate.managedObjectContext
+    static var context: NSManagedObjectContext?
 
     static let entityName = "Session"
     
@@ -46,13 +45,34 @@ class Session: NSManagedObject {
 
         return sessions
     }*/
+    static func save(){
+        if context!.hasChanges {
+            do {
+                try context!.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+        }
+    }
+    static func assertInit(){
+
+        if (context == nil){
+            context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        }
+    }
     static func newEntity(context:NSManagedObjectContext) -> Session{
+        assertInit()
         return NSEntityDescription.insertNewObjectForEntityForName(
             Session.entityName,
             inManagedObjectContext: context)
             as! Session
     }
     static func filter(key:Fields,value:String) -> [Session]{
+        assertInit()
         //let appDelegate =
         //UIApplication.sharedApplication().delegate as! AppDelegate
         //let context = appDelegate.managedObjectContext
@@ -63,7 +83,7 @@ class Session: NSManagedObject {
         
         var sessions:[Session]=[]
         do{
-            sessions = (try context.executeFetchRequest(request) as! [Session])
+            sessions = (try context!.executeFetchRequest(request) as! [Session])
             print(sessions.count)
             if(sessions.count==0){
                 var n = Int(arc4random_uniform(UInt32(7)) + 3)
@@ -73,7 +93,7 @@ class Session: NSManagedObject {
                     n=n-1
                 }
                 print(n)
-                appDelegate.saveContext()
+                save()
                 return filter(key,value: value)
                 
             }
@@ -90,7 +110,7 @@ class Session: NSManagedObject {
         //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         //let context = appDelegate.managedObjectContext
 
-        let session = Session.newEntity(context)
+        let session = Session.newEntity(context!)
         session.mvId = mvId
         session.id = NSUUID().UUIDString
         session.price = Float(arc4random_uniform(UInt32(25)) + 5)

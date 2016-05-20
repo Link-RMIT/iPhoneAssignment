@@ -26,7 +26,6 @@
 		9E1271AF1CEDC5A9002426EB /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4F0F1C9FD3AF00E94F2F /* MovieModel.swift */; };
 		9E4073E31CE9B971001029F9 /* ReceiptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4073E21CE9B971001029F9 /* ReceiptController.swift */; };
 		9E6A4EE11C9FD09600E94F2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE01C9FD09600E94F2F /* AppDelegate.swift */; };
-		9E6A4EE31C9FD09600E94F2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE21C9FD09600E94F2F /* ViewController.swift */; };
 		9E6A4EE81C9FD09600E94F2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE71C9FD09600E94F2F /* Assets.xcassets */; };
 		9E6A4EEB1C9FD09600E94F2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE91C9FD09600E94F2F /* LaunchScreen.storyboard */; };
 		9E6A4EF61C9FD09600E94F2F /* iPhoneAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EF51C9FD09600E94F2F /* iPhoneAssignmentTests.swift */; };
@@ -95,7 +94,6 @@
 		9E4073E21CE9B971001029F9 /* ReceiptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptController.swift; sourceTree = "<group>"; };
 		9E6A4EDD1C9FD09600E94F2F /* iPhoneAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhoneAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6A4EE01C9FD09600E94F2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9E6A4EE21C9FD09600E94F2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9E6A4EE71C9FD09600E94F2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E6A4EEA1C9FD09600E94F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E6A4EEC1C9FD09600E94F2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -177,6 +175,14 @@
 			path = Assignment2Extension;
 			sourceTree = "<group>";
 		};
+		9E58E47C1CEEF2A5007301F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				761B24271CA554D3005CE426 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		9E6A4ED41C9FD09600E94F2F = {
 			isa = PBXGroup;
 			children = (
@@ -207,8 +213,7 @@
 				761B24181CA4E787005CE426 /* Controller */,
 				9E6A4F0E1C9FD38000E94F2F /* Model */,
 				9E6A4EE01C9FD09600E94F2F /* AppDelegate.swift */,
-				761B24271CA554D3005CE426 /* Main.storyboard */,
-				9E6A4EE21C9FD09600E94F2F /* ViewController.swift */,
+				9E58E47C1CEEF2A5007301F6 /* View */,
 				9E6A4EE71C9FD09600E94F2F /* Assets.xcassets */,
 				9E6A4EE91C9FD09600E94F2F /* LaunchScreen.storyboard */,
 				9E6A4EEC1C9FD09600E94F2F /* Info.plist */,
@@ -490,7 +495,6 @@
 				764BE0AB1CDA13920046E772 /* ViewControllerWithIndicator.swift in Sources */,
 				76E72E791CDC826700D981EA /* Core_Data_Persistence.xcdatamodeld in Sources */,
 				761B24221CA4F9CA005CE426 /* MovieDetailController.swift in Sources */,
-				9E6A4EE31C9FD09600E94F2F /* ViewController.swift in Sources */,
 				9EDDE1F41CE5AF4A0070A323 /* BookingViewController.swift in Sources */,
 				9E6A4EE11C9FD09600E94F2F /* AppDelegate.swift in Sources */,
 			);
@@ -741,6 +745,7 @@
 				9E1271A71CEDC094002426EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9E6A4ED81C9FD09600E94F2F /* Build configuration list for PBXProject "iPhoneAssignment" */ = {
 			isa = XCConfigurationList;
