@@ -23,6 +23,7 @@
 		9E12719E1CEDC094002426EB /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E12719D1CEDC094002426EB /* TodayViewController.swift */; };
 		9E1271A11CEDC094002426EB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E12719F1CEDC094002426EB /* MainInterface.storyboard */; };
 		9E1271A51CEDC094002426EB /* Assignment2Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9E1271991CEDC094002426EB /* Assignment2Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9E1271AF1CEDC5A9002426EB /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4F0F1C9FD3AF00E94F2F /* MovieModel.swift */; };
 		9E4073E31CE9B971001029F9 /* ReceiptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4073E21CE9B971001029F9 /* ReceiptController.swift */; };
 		9E6A4EE11C9FD09600E94F2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE01C9FD09600E94F2F /* AppDelegate.swift */; };
 		9E6A4EE31C9FD09600E94F2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6A4EE21C9FD09600E94F2F /* ViewController.swift */; };
@@ -468,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E1271AF1CEDC5A9002426EB /* MovieModel.swift in Sources */,
 				9E12719E1CEDC094002426EB /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
