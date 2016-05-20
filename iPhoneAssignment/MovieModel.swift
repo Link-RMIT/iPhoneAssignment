@@ -123,11 +123,13 @@ class MovieModel
     ]*/
     static func getMovieDetailById(id:String!, callback:(MovieDetail?)->Void) -> Void{
         Alamofire.request(.GET,"https://www.omdbapi.com/",parameters:["plot": "full", "r": "json", "i":id]).responseJSON{ (response)-> Void in
-            
             dispatch_async(dispatch_get_main_queue()){
                 var movie:MovieDetail?
-                if(response.result.value != nil){
-                    movie = MovieDetail(movie: JSON(response.result.value!))
+                if(response.result.value != nil ){
+                    let jmovie = JSON(response.result.value!)
+                    if(jmovie["Response"].stringValue == "True"){
+                        movie = MovieDetail(movie: jmovie)
+                    }
                 }
                 callback(movie)
             }
